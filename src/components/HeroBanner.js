@@ -1,13 +1,23 @@
 import React from 'react';
-import { Box, Stack, Typography } from '@mui/material'; //typography is just an element like <p> tag with additional styles
+import { Box, Stack } from '@mui/material'; 
+import { Typography } from '@mui/material/Typography'; //typography is just an element like <p> tag with additional styles
 
 const HeroBanner = () => {
   return (
-    <Box>
-        <Typography>
-            
+  <Box sx={{
+    mt: { lg: '212px', xs: '70xpx'},
+    ml: { sm: '50px'}
+  }} position="relative" p="20px">
+        <Typography color="#FF2625" fontWeight="600" fontSize="26px">
+          Fitness Club
         </Typography>
-    </Box>
+        <Typography>
+          Sweat, Smile <br/> Repeat!
+        </Typography>
+        <Typography>
+          Check out the Most Effective Exercises
+        </Typography>
+  </Box>
   )
 }
 
