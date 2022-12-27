@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Stack } from '@mui/material'; 
-import { Typography } from '@mui/material/Typography'; //typography is just an element like <p> tag with additional styles
+import { Typography } from '@mui/material'; //typography is just an element like <p> tag with additional styles
 
 const HeroBanner = () => {
   return (
