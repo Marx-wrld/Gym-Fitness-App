@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { Box } from "@mui/material"; // A box is basically a div with some shading and colors
@@ -16,7 +17,7 @@ function App() {
     </Routes>
     <Footer/>
    </Box>
-  )
+  );
 }
 
 export default App;
