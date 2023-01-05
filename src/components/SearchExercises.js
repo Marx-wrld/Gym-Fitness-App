@@ -5,9 +5,9 @@ import { exerciseOptions, fetchData } from '../utils/fetchData';
 import HorizontalScrollbar from './HorizontalScrollbar';
 
 const SearchExercises = () => {
-  const [search, setSearch] = useState('')
-  const [exercises, setExercises] = useState([])
-  const [bodyParts, setBodyParts] = useState([])
+  const [search, setSearch] = useState('');
+  const [exercises, setExercises] = useState([]);
+  const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
     const fetchExercisesData = async () => {
@@ -17,7 +17,7 @@ const SearchExercises = () => {
     }
 
     fetchExercisesData();
-  },[])
+  },[]);
 
   const handleSearch = async () => { //means this function is going to fetch sometime to fetch data from the API 
     if (search){
