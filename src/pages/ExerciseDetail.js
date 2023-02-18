@@ -7,5 +7,4 @@ const ExerciseDetail = () => {
     </div>
   )
 }
-
 export default ExerciseDetail
