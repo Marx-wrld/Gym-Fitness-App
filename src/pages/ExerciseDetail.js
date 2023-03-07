@@ -15,14 +15,14 @@ const ExerciseDetail = () => {
     const fetchExercisesData = async() => {
       const exerciseDbUrl = 'https://exercisedb.p.rapidapi.com';
       const youtubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com';
-      const exerciseDetailData = await fetchData(`${exerciseDbUrl}/exercises/${id}`, exerciseOptions);
+      const exerciseDetailData = await fetchData(`${exerciseDbUrl}/exercises/exercise/${id}`, exerciseOptions);
       setExerciseDetail(exerciseDetailData);
     }
     fetchExercisesData();
   }, [id]);
   return (
     <Box>
-      <Detail exerciseDetail={}/>
+      <Detail exerciseDetail={exerciseDetail}/>
       <ExerciseVideos />
       <SimilarExercises/>
     </Box>
