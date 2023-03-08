@@ -55,5 +55,4 @@ const ExerciseDetail = () => {
     </Box>
   )
 }
-
 export default ExerciseDetail
