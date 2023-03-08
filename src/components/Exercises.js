@@ -2,12 +2,13 @@ import {React, useEffect, useState} from 'react';
 import Pagination from '@mui/material/Pagination';
 import { Box, Stack, Typography } from '@mui/material';
 import { exerciseOptions, fetchData } from '../utils/fetchData';
-import { ExerciseCard } from './ExerciseCard';
+import  ExerciseCard  from './ExerciseCard';
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const exercisesPerPage = 9;
+  const [exercisesPerPage] = useState(9);
 
+  //Pagination
   //we are now able to see all the exercises instead we want to calculate and see the first 9 then the next 9 and so forth.
   //creating the variables for this.
   const indexOfLastExercise = currentPage * exercisesPerPage;
