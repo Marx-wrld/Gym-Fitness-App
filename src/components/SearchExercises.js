@@ -1,10 +1,11 @@
-import React from 'react'
-import {useEffect, useState} from 'react'
+import React from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Button, Stack, TextField, Typography} from '@mui/material';
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 import HorizontalScrollbar from './HorizontalScrollbar';
 
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart}) => {
+
   const [search, setSearch] = useState('');
   const [bodyParts, setBodyParts] = useState([]);
 
@@ -23,7 +24,8 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart}) => {
       // eslint-disable-next-line no-undef
       const exerciseData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions); // lets create utility functions folder
 
-      const searchedExercises = exerciseData.filter ( (exercise) => exercise.name.toLowerCase().includes(search) || exercise.target.toLowerCase().includes(search) || exercise.equipment.toLowerCase().includes(search) || exercise.bodyPart.toLowerCase().includes(search)
+      const searchedExercises = exerciseData.filter ( (exercise) => 
+      exercise.name.toLowerCase().includes(search) || exercise.target.toLowerCase().includes(search) || exercise.equipment.toLowerCase().includes(search) || exercise.bodyPart.toLowerCase().includes(search),
       );
       window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
 
@@ -33,16 +35,32 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart}) => {
   }
 
   return (
-    <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
-      <Typography fontWeight={700} sx={{fontSize: {lg: '44px', xs: '30px'}}} mb="50px" textAlign="center">
+    <Stack 
+      alignItems="center" 
+      mt="37px" 
+      justifyContent="center" 
+      p="20px">
+      
+      <Typography 
+       fontWeight={700} 
+       sx={
+        {
+          fontSize: {lg: '44px', xs: '30px'}
+        }
+        } 
+        mb="50px" 
+        textAlign="center">
         Awesome Exercises <br/> You Should Know!
       </Typography>
+
       <Box position="relative" mb="72px">
         <TextField 
         sx={{
           input: {fontWeight:"700", border: 'none', borderRadius: '4px'},
           width: { lg: '800px', xs: '350px', backgroundColor: 'white', borderRadius: '40px'}
-        }} height="76px" value={search} onChange={(e) => setSearch(e.target.value.toLowerCase())} placeholder="Search Exercises" type="text"
+        }} 
+        height="76px" 
+        value={search} onChange={(e) => setSearch(e.target.value.toLowerCase())} placeholder="Search Exercises" type="text"
         />
         <Button className="search-btn"
           sx={{
